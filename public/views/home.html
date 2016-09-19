@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html ng-app>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <link rel="stylesheet" href="home.css">
+  </head>
+  <body background="nyc.jpg">
+	<label id="title"> SMART TRIP </label>
+	<div id="nav" ng-controller="NavController"><a href="#"> HOME </a> <a herf="#"> EXPLORE </a></div>
+	<div id="form" ng-controller="FormController">
+ 	  <form novalidate class="simple-form">
+		<legend id="info"> ENTER INFORMATION </legend>
+		<br />
+		<span id="arrivalTime" > ARRIVAL TIME:  <input type="datetime-local" ng-model="user.arrivalTime" /></span>
+		<span id="departureTime"> DEPARTURE TIME:  <input type="datetime-local" ng-model="user.departureTime" /></span>
+    <br />
+		<br />
+		<span id="budget"> BUDGET:  $ <input type="val"  ng-model="user.budget" /></span>
+		<span id="citySelect"> CITY:  <select name="singleSelect" ng-model="user.citySelect" >
+					<option value="default">NEW YORK CITY</option>
+					<!--TODO: MORE CITY OPTIONS 
+					<option value="option-2">Option 2</option>
+					<option value="option-3">Option 3</option>
+					-->
+    		  </select><span>
+		<br />
+		<br />
+		<!--TODO: Interest selection
+		<span id="interest"> INTEREST: 
+			<input type="radio" ng-model="user.interest" value="all" /> ALL
+			<input type="radio" ng-model="user.interest" value="clture" /> CULTURE
+			<input type="radio" ng-model="user.interest" value="entertainment" />ENTERTAINMENT
+			<input type="radio" ng-model="user.interest" value="food" /> FOOD
+			<input type="radio" ng-model="user.interest" value="shopping" />SHOPPING				 	
+			<input type="radio" ng-model="user.interest" value="sport" />SPORT
+		</span>	
+		-->
+		<p id="buttons">
+    	<input type="button" ng-click="reset()" value="Reset" />
+    	<input type="submit" ng-click="update(user)" value="Submit" />
+		</p>
+      </form>
+    </div>
+  </body>
+</html>
